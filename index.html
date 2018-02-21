@@ -10,11 +10,14 @@
   	src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
   	integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
   	crossorigin="anonymous"></script>
+  	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   	<script type="text/javascript" src="js/autoscroll.js"></script>
   	<script type="text/javascript" src="js/fadeScroll.js"></script>
+  	<script type="text/javascript" src="js/shooter.js"></script>
 	 <link rel="stylesheet" type="text/css" href="css/style.css">
 	 <!-- font awesome -->
 	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	
 	
 </head>
@@ -26,11 +29,11 @@
 
 			<nav class="site-nav">
 				<ul>
-					<li><a href="#">PLAY TETRIS!</a></li>
+					<li><a href="#myCanvas" onclick="playShooter()">PLAY SHOOTER!</a></li>
 					<li><a href="#" onmousedown=""><i class= "fa fa-home site-nav-icon"></i>Home</a></li>
 					<li><a href="#" onmousedown="autoScrollTo('content')"><i class= "fa fa-info site-nav-icon"></i>About me</a></li>
 					<li><a href="#"><i class= "fa fa-usd site-nav-icon"></i>Skills</a></li>
-					<li><a href="#"><i class= "fa fa-home site-nav-icon"></i>Contact</a></li>
+					<li><a href="#myModal" data-toggle="modal"><i class= "fa fa-home site-nav-icon"></i>Contact</a></li>
 				</ul>
 			</nav>
 			<!-- end of nav -->
@@ -56,7 +59,7 @@
 						<h4>Creating Websites that drive attention, building webstores that sell.</h4>
 						<div class="buttons">
 						<a href="#">CHECK IT OUT..</a>
-						<a href="#">SCREW IT, PLAY TETRIS!</a>
+						<a href="#myCanvas" onclick="playShooter()">SCREW IT, PLAY SHOOTER!</a>
 					</div>
 
 					</div>
@@ -99,11 +102,14 @@
 		</section>
 	</div>
 	<div style="clear: both;"></div>
+
+<!---------- SKILLS SECTION -------->
+
 	<div class="fadeScroll">
 		<section id="boxes">
 		<div class="container">
-			<h2 style="text-align: center;">My skills</h2>
-		<!--pojedynczy "box" -->
+				<h2 style="text-align: center;">My skills</h2>
+				<!--pojedynczy "box" -->
 			<div class="box">
 				<img src="res/logo_html.png">
 				<h3>HTML 5</h3>
@@ -121,11 +127,97 @@
 				<h3>Computer Science & Web-App Security</h3>
 				<p>Besides programming, I learn web-app security. I am still beginner, but I find securing apps & websites from SQL injection, XSS, CSF, and other attacks very interesting!</p>
 			</div>
+
+
+			<div style="clear: both;">
+			<div class="box">
+				<img src="res/php.png">
+				<h3>PHP & MySQL</h3>
+				<p>I have written login, registration forms and mailing functions(using secure procedures). Currently developing "SimplyConnected" - social network based on LAMP stack. I look forward to develop backend skills in PHP, Python & C# in the future.</p>
+			</div>
+
+			<div class="box">
+				<img src="res/js.png">
+				<h3>Javascript</h3>
+				<p>One of the main technologies i work with and learn. Starting from plain, Vanilla javascript, through compound libraries like jquery, to OOP javascript.</p>
+			</div>
+
+			<div class="box">
+				<img src="res/wordpress.png">
+				<h3>Wordpress & Woocommerce</h3>
+				<p>I'm developing&nbsp;<a href="https://topplayer.pl/home/">Topplayer</a> Webstore now. I am easily able to handle hosting, admin panel& server configuration for wordpress CMS. Learning to develop beautiful websites & e-commerce pages using it.</p>
+			</div>
 		</div>
 		<div style="clear: both;"></div>
-	</section>
+</section>
 
 	</div>	
+
+
+
+<!----- CONTACT FORM -------------->
+
+<!-- contact form -->
+
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+    	<div class="alert <?php echo $msgClass?>"></div>
+ 
+      <div class="modal-header">
+       
+        <h3 id="myModalLabel">contact me</h3>
+
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal col-sm-12" action="<?php echo $_SERVER['PHP_SELF']">
+          <div class="form-group">
+          	<label>name & last name</label>
+          	<input class="form-control required" name="name" placeholder="" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text" value ="">
+          </div>
+
+          <div class="form-group">
+          	<label>message</label>
+          	<textarea class="form-control" name="message" placeholder="Wpisz swoją wiadomość..." data-placement="top" data-trigger="manual" value =""></textarea>
+          </div>
+
+          <div class="form-group">
+          	<label>e-mail</label>
+          	<input class="form-control email required" name="email" placeholder="email@you.com please, enter yours.." data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text" value ="">
+          </div>
+
+          <div class="form-group">
+          <label>phone no</label>
+          <input class="form-control phone required" name="telephone" placeholder="i will call you" data-placement="top" data-trigger="manual" data-content="Must be a valid phone number (999-999-9999)" type="text" value = "">
+          </div>
+
+          <div class="form-group">
+          	<button type="submit" name="submit" class="btn btn-success pull-right">send</button> 
+          	<p class="help-block pull-left text-danger hide" id="form-error">&nbsp; @Mateusz Kowalewski 2018 </p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--TETRIS GAMEPLAY -->
+<div id="shooter">
+	<canvas id = "myCanvas" width ="480" height="320"></canvas>
+</div>
+	
+
+
+
+<!-- FOOTER -->
+
 
 
 <script type="text/javascript">

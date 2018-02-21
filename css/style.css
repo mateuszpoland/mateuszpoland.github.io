@@ -68,6 +68,7 @@ header::after
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	text-decoration: none;
 }
 .site-nav li
 {
@@ -83,7 +84,7 @@ header::after
 	color: #EBEBD3;
 	display: block;
 	padding: 2em 6em;
-	text-decoration: none;
+	text-decoration: none !important;
 	text-transform: uppercase;
 }
 /* styling of font-awesome icons */
@@ -196,10 +197,10 @@ to wtedy zadziała rotate */
 
 .buttons a{
 	display: inline-block;
-	text-decoration: none;
+	text-decoration: none !important;
 	padding: 5px;
 	border: 2px solid white;
-	width: 200px;
+	width: 220px;
 	margin: 3px 3px 3px 0;
 	color: white;
 	border-radius: 5px;
@@ -257,7 +258,7 @@ to wtedy zadziała rotate */
 	text-align: center;
 	color: white;
 	padding-bottom: 5%;
-	border: 1px solid red;
+
 	
 
 }
@@ -314,19 +315,33 @@ ul#benefits{
 
 #boxes
 {
-	margin-top: 5%;
+	border-radius: 5px;
+	background: #E0EAFC;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 /*stylizacja indywidualnego boxa */
 #boxes .box
 {
-	float: left;
-	width: 30%;
+	float: none;
 	text-align: center;
 	padding: 10px;
 }
 #boxes .box img
 {
 	width: 90px;
+}
+#shooter {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 480px;
+	height: 320px;
+
+}
+#myCanvas {
+	background: white;
 }
 @media(min-width: 1150px)
 {
@@ -360,6 +375,14 @@ ul#benefits{
 	.site-nav-icon
 	{
 		display: none;
+	}
+
+	#boxes .box
+	{
+	float: left;
+	width: 30%;
+	text-align: center;
+	padding: 10px;
 	}
 	
 }
