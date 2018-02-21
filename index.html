@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width= device-width">
+	<title>Mateusz Kowalewski - Portfolio Website</title>
+	
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	 <script
+  	src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  	integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  	crossorigin="anonymous"></script>
+  	<script type="text/javascript" src="js/autoscroll.js"></script>
+  	<script type="text/javascript" src="js/fadeScroll.js"></script>
+	 <link rel="stylesheet" type="text/css" href="css/style.css">
+	 <!-- font awesome -->
+	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	
+	
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<h1 class="logo">MATEUSZ<span>Kowalewski</span></h1>
+
+			<nav class="site-nav">
+				<ul>
+					<li><a href="#">PLAY TETRIS!</a></li>
+					<li><a href="#" onmousedown=""><i class= "fa fa-home site-nav-icon"></i>Home</a></li>
+					<li><a href="#" onmousedown="autoScrollTo('content')"><i class= "fa fa-info site-nav-icon"></i>About me</a></li>
+					<li><a href="#"><i class= "fa fa-usd site-nav-icon"></i>Skills</a></li>
+					<li><a href="#"><i class= "fa fa-home site-nav-icon"></i>Contact</a></li>
+				</ul>
+			</nav>
+			<!-- end of nav -->
+
+			<!-- this nav wil be toggled by below "menu-toggle" and "hamburger" classes once screen size drops below a certain point -->
+			<div class="menu-toggle">
+				<div class="hamburger-menu"></div>
+			</div>
+		</div>
+	</header>
+
+
+
+	<!-- MIDDLE SECTION -->
+	<div class="fadeScroll">
+		<section>
+			<div class="firstsection">
+				<div class="container">
+					<div class="imagewrapper">
+						<div class="personal_image"></div>
+						<h1>Mateusz Kowalewski</h1>
+						<h2>Programming & Web Development</h2>
+						<h4>Creating Websites that drive attention, building webstores that sell.</h4>
+						<div class="buttons">
+						<a href="#">CHECK IT OUT..</a>
+						<a href="#">SCREW IT, PLAY TETRIS!</a>
+					</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+
+	<div class="fadeScroll">
+		<section id="aboutme">
+			<div class="container">
+					<div class="thirdwrapper">
+						<div class="titlesection">
+						<div id="title">About me</div>
+							<div id="content">
+							<h2>Why is it worth it?</h2>
+							<div id="bar"></div>
+							<p>looking for a focused candidate, who is able to expand skills expotentially and provides great money to value ratio?</p>
+								<p>Dear <span style="font-weight: 700;">Code Shakers</span>, look nowhere else!</p>
+								<p>by hiring me, you will recieve:</p>
+								<ul id="benefits">
+									<li><i class="fa fa-arrow-right"></i>Skillset of HTML5, CSS3, Javascript/jQuery, Bootstrap, PHP5/PHP7 OOP PHP & Wordpress</li>
+									<li><i class="fa fa-arrow-right"></i>proficient english speaker, with a lot of commercial experience using it</li>
+									<li><i class="fa fa-arrow-right"></i>able to focus entirely on the task, and execute it till completion</li>
+									<li><i class="fa fa-arrow-right"></i>smiled, relaxed team player, subscribing to common goal</li>
+									<li><i class="fa fa-arrow-right"></i>creative and engaged, always looking for non-standard solutions</li>
+								</ul>
+							</div>
+						</div>
+						<div class="imgsection">
+							<img src="res/image_1.jpg">
+								<div class="socialmedia">
+									<p>I am a self-taught programmer, though I know I'm still at the beginning of my path. By everyday practice, I want to develop valuable skillset, ending up working remotely in the future.</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+		</section>
+	</div>
+	<div style="clear: both;"></div>
+	<div class="fadeScroll">
+		<section id="boxes">
+		<div class="container">
+			<h2 style="text-align: center;">My skills</h2>
+		<!--pojedynczy "box" -->
+			<div class="box">
+				<img src="res/logo_html.png">
+				<h3>HTML 5</h3>
+				<p>I am able to produce readable HTML 5 code. I am looking to expand my skillset to handle big code structures</p>
+			</div>
+
+			<div class="box">
+				<img src="res/logo_css.png">
+				<h3>CSS 3</h3>
+				<p>Writing clean, easy - to - read css code. I am planning to expand skillset to using CSS Grid, Flexbox and Sass preprocessor</p>
+			</div>
+
+			<div class="box">
+				<img src="res/logo_brush.png">
+				<h3>Computer Science & Web-App Security</h3>
+				<p>Besides programming, I learn web-app security. I am still beginner, but I find securing apps & websites from SQL injection, XSS, CSF, and other attacks very interesting!</p>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+	</section>
+
+	</div>	
+
+
+<script type="text/javascript">
+// target and select three bar icon - that's where user will be clicking to open nav menu
+$('.menu-toggle').click(function() {
+  //after clicking on "menu-toggle - switch regular class .site-nav to site-nav-open"
+  $('.site-nav').toggleClass('site-nav-open', 500);
+  //$this - basically means 'menu-toggle' - the thing we evoke function on
+  $(this).toggleClass('menu-toggle-open');
+  
+})
+	
+</script>
+</body>
+</html>
