@@ -20,6 +20,7 @@ var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var score = 0;
+var play = true;
 
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
@@ -58,7 +59,7 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATS!");
+                        alert("YOU WON, CONGRATS!, now hire me!");
                         document.location.reload();
                     }
                 }
@@ -106,27 +107,29 @@ function drawScore() {
 
 
 function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBricks();
-    drawBall();
-    drawPaddle();
-    drawScore();
-    collisionDetection();
+    if(play){
+       ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBricks();
+        drawBall();
+        drawPaddle();
+        drawScore();
+        collisionDetection();
     
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
-        dx = -dx;
+        dx = -1.1*dx;
     }
     if(y + dy < ballRadius) {
-        dy = -dy;
+        dy = -1.1*dy;
     }
     else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
+            dy = -1.1*dy;
         }
         else {
-            var playagain = window.confirm("GAME OVER, play again?");
+            play = false;
+            var playagain = window.confirm("GAME OVER, play again? (can you hire me anyway? :)");
             if(playagain == true){
-                window.location.reload();
+                playAgain();
                 
             }else{
                 window.location.reload();
@@ -142,12 +145,18 @@ function draw() {
     }
     
     x += dx;
-    y += dy;
+    y += dy;  
+    }
+   
 }
+
+
 
 setInterval(draw, 10);
 }
 
-
+function playAgain(){
+    playShooter();
+}
 
 

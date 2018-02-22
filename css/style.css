@@ -4,9 +4,9 @@ url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 body, html
 {
 	height: 100%;
-	background: #F0F8EA;
 	font-family: 'Roboto', sans-serif;
 	text-transform: uppercase;
+	background: #FBFBFB;
 }
 
 
@@ -15,6 +15,7 @@ body, html
 	width: 95%;
 	/*max-width: 1000px; */
 	margin: auto;
+
 	
 
 }
@@ -158,6 +159,13 @@ to wtedy zadziała rotate */
 }
 
 /************** FIRST SECTION - AFTER NAVIGATION BAR ******************/
+.socialicons i{
+	font-size: 2.5em;
+	color: white;
+	padding-right: 25px;
+	margin-top: 10px;
+
+}
 .firstsection{
 	width: 100%;
 	min-height: 100%;
@@ -224,18 +232,17 @@ to wtedy zadziała rotate */
 
 
 #aboutme{
-
+	
 }
 .thirdwrapper
 {
-	width: 90%;
+	width: 100%;
 	margin: auto;
 
 	
 }
 .thirdwrapper .titlesection{
 	width: 60%;
-	height: 20%;
 	float: left;
 	margin-right: -1px;
 }
@@ -338,10 +345,23 @@ ul#benefits{
 	margin-right: auto;
 	width: 480px;
 	height: 320px;
-
+	margin-top: 5px;
 }
 #myCanvas {
 	background: white;
+}
+footer{
+	background: #f46b45;
+	color: white;
+	margin-top: 5px;
+	min-height: 100px;
+}
+.footerwrapper{
+	width: 100%;
+	float: none;
+}
+#number, #email{
+	text-transform: lowercase !important;
 }
 @media(min-width: 1150px)
 {
@@ -384,5 +404,10 @@ ul#benefits{
 	text-align: center;
 	padding: 10px;
 	}
-	
+	.footerwrapper{
+	width: 30%;
+	margin-top: 20px;
+	float: left;
+	text-align: center;
+}
 }

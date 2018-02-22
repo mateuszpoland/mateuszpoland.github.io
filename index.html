@@ -30,9 +30,9 @@
 			<nav class="site-nav">
 				<ul>
 					<li><a href="#myCanvas" onclick="playShooter()">PLAY SHOOTER!</a></li>
-					<li><a href="#" onmousedown=""><i class= "fa fa-home site-nav-icon"></i>Home</a></li>
-					<li><a href="#" onmousedown="autoScrollTo('content')"><i class= "fa fa-info site-nav-icon"></i>About me</a></li>
-					<li><a href="#"><i class= "fa fa-usd site-nav-icon"></i>Skills</a></li>
+					<li><a href="#" onclick="window.location.reload()"><i class= "fa fa-home site-nav-icon"></i>Home</a></li>
+					<li><a href="#aboutme"><i class= "fa fa-info site-nav-icon"></i>About me</a></li>
+					<li><a href="#boxes"><i class= "fa fa-usd site-nav-icon"></i>Skills</a></li>
 					<li><a href="#myModal" data-toggle="modal"><i class= "fa fa-home site-nav-icon"></i>Contact</a></li>
 				</ul>
 			</nav>
@@ -52,13 +52,18 @@
 		<section>
 			<div class="firstsection">
 				<div class="container">
+				<div class="socialicons">
+					<a href="https://www.facebook.com/mateusz.kowalewski.925" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="https://github.com/mateuszpoland" target="_blank"><i class="fa fa-github"></i></a>	
+					<a href="https://www.linkedin.com/in/mateusz-kowalewski-25b259a7/" target="_blank"><i class="fa fa-linkedin"></i></a>		
+				</div>
 					<div class="imagewrapper">
 						<div class="personal_image"></div>
 						<h1>Mateusz Kowalewski</h1>
 						<h2>Programming & Web Development</h2>
 						<h4>Creating Websites that drive attention, building webstores that sell.</h4>
 						<div class="buttons">
-						<a href="#">CHECK IT OUT..</a>
+						<a href="#boxes">CHECK IT OUT..</a>
 						<a href="#myCanvas" onclick="playShooter()">SCREW IT, PLAY SHOOTER!</a>
 					</div>
 
@@ -86,7 +91,7 @@
 									<li><i class="fa fa-arrow-right"></i>proficient english speaker, with a lot of commercial experience using it</li>
 									<li><i class="fa fa-arrow-right"></i>able to focus entirely on the task, and execute it till completion</li>
 									<li><i class="fa fa-arrow-right"></i>smiled, relaxed team player, subscribing to common goal</li>
-									<li><i class="fa fa-arrow-right"></i>creative and engaged, always looking for non-standard solutions</li>
+									<li><i class="fa fa-arrow-right"></i>creative and engaged, always looking for outside the box solutions</li>
 								</ul>
 							</div>
 						</div>
@@ -174,7 +179,7 @@
 
       </div>
       <div class="modal-body">
-        <form class="form-horizontal col-sm-12" action="<?php echo $_SERVER['PHP_SELF']">
+        <form class="form-horizontal col-sm-12">
           <div class="form-group">
           	<label>name & last name</label>
           	<input class="form-control required" name="name" placeholder="" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text" value ="">
@@ -182,7 +187,7 @@
 
           <div class="form-group">
           	<label>message</label>
-          	<textarea class="form-control" name="message" placeholder="Wpisz swoją wiadomość..." data-placement="top" data-trigger="manual" value =""></textarea>
+          	<textarea class="form-control" name="message" placeholder="enter your message.." data-placement="top" data-trigger="manual" value =""></textarea>
           </div>
 
           <div class="form-group">
@@ -218,7 +223,18 @@
 
 <!-- FOOTER -->
 
-
+<footer>
+<div style="clear: both;"></div>
+	<div class="footerwrapper">
+		<p>Mateusz Kowalewski &copy; 2017-2018</p>
+	</div>
+	<div class="footerwrapper" id="number">
+		<p>contact: 505006136</p>
+	</div>
+	<div class="footerwrapper" id="email">
+		<p>mateuszpoland6@gmail.com</p>
+	</div>
+	</footer>
 
 <script type="text/javascript">
 // target and select three bar icon - that's where user will be clicking to open nav menu

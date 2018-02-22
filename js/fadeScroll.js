@@ -16,7 +16,7 @@ $(document).ready(function() {
                         //funkcja .offset().top - zwraca aktualne koordynaty pierwszego napotkanego elementu należącego do danej klasy, relatywnie do dokumentu - w tym wypadku od top - od góry dokumentu
                             elemOffsetTop = $this.offset().top;
                            //jeżeli przewinę scroll poniżej odległości danego elementu od góry strony, to dodaj property css w sposób liniowy zgodny z ponizsym równaniem
-                        if (currScrollPos > elemOffsetTop) $this.css('opacity', 1 - (currScrollPos-elemOffsetTop)/600);
+                        if (currScrollPos > elemOffsetTop) $this.css('opacity', 1 - (currScrollPos-elemOffsetTop)/1000);
                     }); 
                 });
                 
